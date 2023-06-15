@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 require 'faker'
+require "open-uri"
 
 puts "Clearing old data..."
 User.destroy_all
@@ -15,17 +16,17 @@ puts "Database clean!"
 
 puts 'Creating Users...'
 user_host = User.new(
-  name: "Host name", 
-  email: "userhost@mail.com", 
-  password: "123123", 
+  name: "Host name",
+  email: "userhost@mail.com",
+  password: "123123",
   phone_number: "999"
 )
 user_host.save!
 
 user_guest = User.new(
-  name: "Guest name", 
-  email: "userguest@mail.com", 
-  password: "321321", 
+  name: "Guest name",
+  email: "userguest@mail.com",
+  password: "321321",
   phone_number: "911"
 )
 user_guest.save!
@@ -38,10 +39,18 @@ puts 'Creating 50 fake listings...'
     location: "#{Faker::Address.city}, #{Faker::Address.country}",
     details: Faker::Lorem.paragraph,
     price: rand(0..1000),
-    image_url: Faker::LoremFlickr.image(size: "1200x800", search_terms: ['city'])
+    user: user_host
   )
+
+  listing.save!
+
+  file = URI.open("https://source.unsplash.com/featured/?house")
+  listing.images.attach(io: file, filename: "img.png", content_type: "image/png")
+
   listing.save!
 end
 
 puts 'Finished!'
 
+
+# \add to my assets
