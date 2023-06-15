@@ -29,9 +29,9 @@ end
 puts 'Finished!'
 
 puts 'Creating Users...'
-user_host = User.new(name: "Host name" email: "userhost@mail.com", password: "123123", phone_number: "1")
+user_host = User.new(name: "Host name", email: "userhost@mail.com", password: "123123", phone_number: "1")
 user_host.save!
 
-user_guest = User.new(name: "Guest name" email: "userguest@mail.com", password: "321321", phone_number: "2")
+user_guest = User.new(name: "Guest name", email: "userguest@mail.com", password: "321321", phone_number: "2")
 user_guest.save!
 puts 'Users Created!'
