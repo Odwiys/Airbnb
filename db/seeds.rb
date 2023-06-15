@@ -21,9 +21,10 @@ puts 'Creating 50 fake listings...'
     location: "#{Faker::Address.city}, #{Faker::Address.country}",
     details: Faker::Lorem.paragraph,
     price: rand(0..1000),
-    image_url: Faker::LoremFlickr.image(size: "1200x800", search_terms: ['city'])
+    image_url: "https://source.unsplash.com/1200x800/?#{city}"
   )
-  listing.save!
+
+  listing.save
 end
 
 puts 'Finished!'
