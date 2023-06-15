@@ -34,6 +34,7 @@ puts 'Users Created!'
 
 puts 'Creating 50 fake listings...'
 50.times do
+  puts "creating new listing..."
   listing = Listing.new(
     name: Faker::Name.name,
     location: "#{Faker::Address.city}, #{Faker::Address.country}",
@@ -43,11 +44,14 @@ puts 'Creating 50 fake listings...'
   )
 
   listing.save!
+  puts "created #{listing.name}!"
+  puts  "attaching images..."
 
   file = URI.open("https://source.unsplash.com/featured/?house")
   listing.images.attach(io: file, filename: "img.png", content_type: "image/png")
 
   listing.save!
+  puts "Image added!"
 end
 
 puts 'Finished!'
