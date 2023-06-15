@@ -32,29 +32,34 @@ user_guest = User.new(
 user_guest.save!
 puts 'Users Created!'
 
-puts 'Creating 50 fake listings...'
-50.times do
-  puts "creating new listing..."
-  listing = Listing.new(
-    name: Faker::Name.name,
-    location: "#{Faker::Address.city}, #{Faker::Address.country}",
-    details: Faker::Lorem.paragraph,
-    price: rand(0..1000),
-    user: user_host
-  )
+# puts 'Creating 50 fake listings...'
+# 50.times do
+#   puts "creating new listing..."
+#   listing = Listing.new(
+#     name: Faker::Name.name,
+#     location: "#{Faker::Address.city}, #{Faker::Address.country}",
+#     details: Faker::Lorem.paragraph,
+#     price: rand(0..1000),
+#     user: user_host
+#   )
 
-  listing.save!
-  puts "created #{listing.name}!"
-  puts  "attaching images..."
+#   listing.save!
+#   puts "created #{listing.name}!"
+#   puts  "attaching images..."
 
-  file = URI.open("https://source.unsplash.com/featured/?house")
-  listing.images.attach(io: file, filename: "img.png", content_type: "image/png")
+#   file = URI.open("https://source.unsplash.com/featured/?house")
+#   listing.images.attach(io: file, filename: "img.png", content_type: "image/png")
 
-  listing.save!
-  puts "Image added!"
-end
+#   listing.save!
+#   puts "Image added!"
+# end
 
-puts 'Finished!'
+# puts 'Finished!'
 
-
-# \add to my assets
+puts "Creating wishlist..."
+wishlist_new = Wishlist.new(
+  name: "Wishlist name",
+  user: user_guest
+)
+wishlist_new.save!
+puts 'Wishlist Created!'
