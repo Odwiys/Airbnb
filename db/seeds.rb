@@ -52,5 +52,14 @@ end
 
 puts 'Finished!'
 
+puts "Creating reservations"
+10.times do
+  puts "Creating a new reservation..."
+  reservation = Reservation.new(
+    start_date: Faker::Date.between(from: 1.day.from_now, to: 6.months.from_now),
+    end_date: Faker::Date.between(from: Date.current, to: 7.months.from_now)
+  )
 
-# \add to my assets
+  reservation.save!
+  puts "Created reservation"
+end
