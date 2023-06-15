@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <h1>Airbnb Listing</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @listings.each do |listing| %>
+      <h2><%= listing.name %></h2>
+      <p><%= listing.location %></p>
+      <p><%= listing.details %></p>
+      <p><%= listing.price %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <%= link_to "Add a new listing!", new_listing_path %>
+</div>
