@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <h1>New Listing</h1>
+      <%= simple_form_for [@listing] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :location %>
+        <%= f.input :details %>
+        <%= f.input :price %>
+        <%= f.submit "Submit new listing!", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>

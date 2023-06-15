@@ -1,31 +1,20 @@
-<div class="navbar navbar-expand-sm navbar-light>
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-        <img width= 100px src="https://1000logos.net/wp-content/uploads/2023/01/Airbnb-logo.png" />
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Airbnb your home</a>
-          </li>
-          <li class="nav-item">
-            <img width=20px src="https://seeklogo.com/images/G/globe-logo-42DE548AC7-seeklogo.com.png" />
-          </li>
-          <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-            </div>
-          </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
-      </ul>
-    </div>
+<div class="container">
+  <div class="row">
+    <h1>Airbnb Listing</h1>
   </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @listings.each do |listing| %>
+      <h2><%= listing.name %></h2>
+      <p><%= listing.location %></p>
+      <p><%= listing.details %></p>
+      <p><%= listing.price %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <%= link_to "Add a new listing!", new_listing_path %>
 </div>
