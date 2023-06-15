@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :wishlists
-  has_many :listings
+  has_many :listings, dependent: :destroy
   has_many :bookmarks, through: :listings
   has_many :reservations
 
