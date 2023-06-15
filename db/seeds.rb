@@ -56,5 +56,22 @@ end
 
 puts 'Finished!'
 
+puts "Creating wishlist..."
+wishlist_new_one = Wishlist.new(
+  name: "Wishlist name",
+  user: user_guest
+)
+wishlist_new_one.save!
 
-# \add to my assets
+wishlist_new_two = Wishlist.new(
+  name: "Wishlist name",
+  user: user_guest
+)
+wishlist_new_two.save!
+
+wishlist_new_three = Wishlist.new(
+  name: "Wishlist name",
+  user: user_guest
+)
+wishlist_new_three.save!
+puts 'Wishlist Created!'
