@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts 'Creating Users...'
+user_host = User.new(
+	name: "Host Name"
+
+)
+user_host.save!
+
+user_guest = User.new(
+	name: "Guest Name"
+)
+user_guest.save!
+puts 'Users Created!'
