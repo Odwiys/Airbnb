@@ -75,3 +75,14 @@ wishlist_new_three = Wishlist.new(
 )
 wishlist_new_three.save!
 puts 'Wishlist Created!'
+
+puts "Creating a new reservation..."
+reservation = Reservation.new(
+  start_date: Faker::Date.between(from: 1.day.from_now, to: 6.months.from_now),
+  end_date: Faker::Date.between(from: Date.current, to: 12.months.from_now),
+  user: user_guest,
+  listing: Listing.first
+)
+
+reservation.save!
+puts "Created reservation"
