@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <h1>Wishlists</h1>
+    <%= simple_form_for [@wishlist] do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Create Wishlist!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
