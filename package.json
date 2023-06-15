@@ -10,6 +10,7 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "db": "rails db:drop db:create db:migrate db:seed"
   }
 }
