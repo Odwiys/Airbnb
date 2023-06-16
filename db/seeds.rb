@@ -56,5 +56,33 @@ end
 
 puts 'Finished!'
 
+puts "Creating wishlist..."
+wishlist_new_one = Wishlist.new(
+  name: "Wishlist name",
+  user: user_guest
+)
+wishlist_new_one.save!
 
-# \add to my assets
+wishlist_new_two = Wishlist.new(
+  name: "Wishlist name",
+  user: user_guest
+)
+wishlist_new_two.save!
+
+wishlist_new_three = Wishlist.new(
+  name: "Wishlist name",
+  user: user_guest
+)
+wishlist_new_three.save!
+puts 'Wishlist Created!'
+
+puts "Creating a new reservation..."
+reservation = Reservation.new(
+  start_date: Faker::Date.between(from: 1.day.from_now, to: 6.months.from_now),
+  end_date: Faker::Date.between(from: Date.current, to: 12.months.from_now),
+  user: user_guest,
+  listing: Listing.first
+)
+
+reservation.save!
+puts "Created reservation"
