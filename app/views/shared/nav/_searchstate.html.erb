@@ -1,0 +1,24 @@
+<div  style='width: 33vw'>
+  <% if request.path == root_path %>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="d-flex justify-content-evenly search-form-control form-group border rounded-pill p-1 shadow-sm" style= 'width: 80%'>
+          <%= link_to "Anywhere", "#", class: "btn btn-flat bg-transparent border-end"%>
+          <%= link_to "Anyweek", "#", class: "btn btn-flat bg-transparent border-end"%>
+          <%= link_to "Add guests", "#", class: "btn btn-flat bg-transparent text-secondary "%>
+          <button name="button" type="submit" class="btn bg-danger rounded-circle text-white">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+    </div>
+  <% elsif request.path == listings_path %>
+    <div class="d-flex align-items-center">
+      <div class="d-flex justify-content-between search-form-control form-group border rounded-pill p-1 shadow-sm"  style= 'width: 100%'>
+        <%= link_to "Start your search", "#", class: "btn btn-flat bg-transparent"%>
+        <button name="button" type="submit" class="btn bg-danger rounded-circle text-white">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  <% else %>
+  <% end %>
+</div>
