@@ -1,0 +1,33 @@
+// Import page-specific CSS files here.
+@import "components/card";
+
+.header-row {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.header-column {
+
+}
+
+
+#listings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.col {
+  background: black;
+  margin: 1em;
+  flex: 1;
+}
+#listingsImg {
+  line-height: 0;
+  display: flex;
+}
+#listingsImg img {
+  background: blue;
+  width: 100%;
+  padding: 0.5em;
+  height: auto;
+}
