@@ -1,3 +1,4 @@
+
 <%# Header component here %>
     <div class = "header-container">
       <h1><%= @listing.name %></h1>
@@ -55,3 +56,16 @@
 
       </div>
     </div>
+<div>
+  <%= link_to 'All Listings', root_path %> |
+  <%= link_to 'Add a listing', new_listing_path(@listing) %>
+</div>
+<hr>
+<h2>Your Listing</h2>
+<ul>
+
+  <% @listing.each do |list| %>
+    <li><%= list.name %> (<%= list.location %>)</li>
+  <% end %>
+
+</ul>
