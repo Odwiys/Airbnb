@@ -1,0 +1,57 @@
+<%# Header component here %>
+    <div class = "header-container">
+      <h1><%= @listing.name %></h1>
+         <div class="header-row">
+            <div class="header-column flex-grow-1">
+              <p><%="★ 4.92 · Superhost · " %> <%= @listing.location %></p>
+            </div>
+           <div class="header-column">
+              <p><%="something here" %></p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+<%# Listing Images here %>
+<div id="listings">
+  <div class="col">
+  </div>
+  <div class="col" id="listingsImg">
+    <div class="row">
+    <%# #IMAGES NEED TO BE PULLED FROM LISTING IMAGE %>
+      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-20605023/original/54a54b14-9c99-4b06-a89b-a825c73879d7.jpeg?im_w=720" />
+      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-20605023/original/54a54b14-9c99-4b06-a89b-a825c73879d7.jpeg?im_w=720" />
+    </div>
+    <div class="row">
+      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-20605023/original/54a54b14-9c99-4b06-a89b-a825c73879d7.jpeg?im_w=720" />
+      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-20605023/original/54a54b14-9c99-4b06-a89b-a825c73879d7.jpeg?im_w=720" />
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="listing-gallery">
+
+      <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div> %>
+          <h2>Dying</h2>
+          <p></p>
+        </div>
+        <h2 class="card-trip-pricing">£99.99</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                  <!-- Add more images here if available -->
+        </div>
+        <div class="details">
+          <p><%= @listing.location %></p>
+          <p><%= @listing.details %></p>
+          <p>Price: <%= @listing.price %></p>
+          <p>Check-in: <%= "Whatever"%></p>
+          <p>Check-out: <%= "wahtever" %></p>
+        </div>
+
+
+      </div>
+    </div>
