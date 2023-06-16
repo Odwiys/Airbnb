@@ -1,20 +1,27 @@
 <div class="container">
   <div class="row">
-    <h1>Airbnb Listing</h1>
+    <h1>Listings</h1>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
+<div class="container col-6 border border-dark rounded-pill">
+    <div class="d-flex  justify-content-center">
+      <div class="p-2"> Display all Listings</div>
+            <div class="p-2"> | </div>
+      <div class="p-2 flex-grow-1"><%= link_to "Add New Lising", new_listing_path %></div>
+    </div>
+</div>
+
+  <div class="container">
     <% @listings.each do |listing| %>
-      <h2><%= listing.name %></h2>
-      <p><%= listing.location %></p>
-      <p><%= listing.details %></p>
-      <p><%= listing.price %></p>
-    <% end %>
+      <div class="card">
+      <% listing.images.each do |image| %>
+        <div class="card-image"><%= cl_image_tag image.key, height: 150, width: 150, crop: :fill %></div>
+      <% end %>
+        <h2><%= listing.name %></h2>
+        <p><%= listing.location %></p>
+        <p><%= listing.details %></p>
+        <p><strong>$<%= listing.price %>SGD</strong> night</p>  
   </div>
-</div>
-
-<div class="container">
-  <%= link_to "Add a new listing!", new_listing_path %>
+    <% end %>
 </div>
