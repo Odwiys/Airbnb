@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="padding-top: 4rem;"">
   <div class="row">
     <h1>Listings</h1>
   </div>
@@ -16,7 +16,7 @@
     <% @listings.each do |listing| %>
       <div class="card">
       <% listing.images.each do |image| %>
-        <div class="card-image"><%= cl_image_tag image.key, height: 150, width: 150, crop: :fill %></div>
+        <div class="card-image"><%= cl_image_tag image.key, height: 100, width: 100, crop: :fill %></div>
       <% end %>
         <h2><%= listing.name %></h2>
         <p><%= listing.location %></p>
