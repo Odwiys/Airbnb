@@ -9,9 +9,36 @@
 require 'faker'
 require "open-uri"
 
+PLACE_NAMES = [
+  "Whispering Pines Retreat",
+  "Seaside Serenity Villa",
+  "The Enchanted Cottage",
+  "Urban Chic Loft",
+  "Mountain Haven Hideaway",
+  "Tranquil Riverfront Lodge",
+  "Dreamy Beachside Bungalow",
+  "Luxe Skyline Penthouse",
+  "Cozy Cabin in the Woods",
+  "Island Paradise Getaway",
+  "Historic Victorian Manor",
+  "Zen Garden Oasis",
+  "Secluded Lakeside Chalet",
+  "Tropical Paradise Villa",
+  "Artsy Bohemian Studio",
+  "Retro Vintage Camper Experience",
+  "Rustic Farm Retreat",
+  "Modern City Escape",
+  "Treehouse Wonderland",
+  "Coastal Castle Retreat",
+]
+
 puts "Clearing old data..."
-User.destroy_all
+
+Reservation.destroy_all
+Wishlist.destroy_all
 Listing.destroy_all
+User.destroy_all
+
 puts "Database clean!"
 
 puts 'Creating Users...'
@@ -32,12 +59,12 @@ user_guest = User.new(
 user_guest.save!
 puts 'Users Created!'
 
-puts 'Creating 50 fake listings...'
-50.times do
+puts 'Creating 20 fake listings...'
+PLACE_NAMES.length.times do |index|
   puts "creating new listing..."
   listing = Listing.new(
-    name: Faker::Name.name,
-    location: "#{Faker::Address.city}, #{Faker::Address.country}",
+    name: PLACE_NAMES[index],
+    location: Faker::Address.city(options: { with_state: true }),
     details: Faker::Lorem.paragraph,
     price: rand(0..1000),
     user: user_host
