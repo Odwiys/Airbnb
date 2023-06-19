@@ -1,0 +1,55 @@
+<div class="container bg-light">
+  <h1>Welcome, <%= @user.name %></h1>
+
+  <br>
+
+  <div>
+    <h2 class="fs-4 text">Your Reservations </h2>
+    <br>
+    <br>
+    <h3><%#= link_to "All reservations", "#", class: "d-flex btn btn-ghost text-dark" %></h3>
+  </div>
+  <div class="border-bottom">
+    <%= link_to "Checking out (0)", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to "Currently hosting (0)", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to "Arriving soon (0)", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to "Upcoming (0)", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to "#", class: "btn btn-ghost text-dark" do %>
+      Pending (<%= @reservations.length %>)
+    <% end %>
+  </div>
+
+  <br>
+
+  <div>
+  <% if @reservations.length === 0 %>
+    <p class="d-flex justify-content-center fw-medium m-5 border-bottom">You have no upcoming reservations.</p>
+    <%# <p class="d-flex justify-content-center"> See all reservations</p> %>
+  <% else %>
+    <div class="container listings flex-column mx-2 d-flex" style="justify-content: space-around;">
+      <div class="card">
+        <% @reservations.each do |reservation| %>
+          <%= cl_image_tag(reservation.listing.images.first.key, style:'object-fit: cover; width: 13vw; height: 13vw; border-radius: 12px;')%>
+          <h2><%= reservation.listing.name %></h2>
+          <h2>Booked by: <%= reservation.user.name %></h2>
+          <p>Booking from: <%= reservation.start_date %></p>
+          <p>Until: <%= reservation.end_date %></p>
+        <% end %>
+
+        <%# Accept/ Decline buttons %>
+        <div class="d-flex justify-content-between me-1">
+          <%= link_to "Accept", "#", class: "btn btn-gradient bg-success bg-gradient text-light" %>
+          <%= link_to "Decline", "#", class: "btn btn-gradient bg-danger bg-gradient text-light" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <br>
+  <div class="d-flex justify-content-center border-top">
+    <p>How can we make it easier to manage your reservations? Share your feedback</p>
+  </div>
+
+
+
+</div>

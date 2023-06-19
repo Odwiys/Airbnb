@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @listings = Listing.all
   end
+
+  def hosting
+    @user = current_user
+    @reservations = Reservation.joins(:listing).where('listings.user_id = ?', current_user.id)
+  end
 end
