@@ -5,8 +5,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :users, only: %i[new create index]
-  resources :reservations
-  resources :listings
+
+  resources :listings do
+    resources :reservations
+  end
+
   resources :wishlists, only: %i[new create destroy] do
     resources :bookmarks, only: %i[create destroy]
   end
