@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create index]
 
   resources :listings do
-    resources :reservations
+    resources :reservations, only: %i[new create show]
   end
+
+  resources :reservations, only: %i[index]
 
   resources :wishlists, only: %i[new create destroy] do
     resources :bookmarks, only: %i[create destroy]
