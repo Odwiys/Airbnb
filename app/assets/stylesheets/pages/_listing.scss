@@ -3,31 +3,44 @@
 
 .header-row {
   display: flex;
-  flex-wrap: wrap;
-
+  align-items: center;
 }
 
 .header-column {
-
+  flex-grow: 1;
 }
 
-
-#listings {
+.listings {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.col {
-  background: black;
-  margin: 1em;
-  flex: 1;
-}
-#listingsImg {
-  line-height: 0;
-  display: flex;
-}
-#listingsImg img {
-  background: blue;
+
+/* General Image Styling */
+img {
   width: 100%;
-  padding: 0.5em;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Flexbox-based solution: */
+.images--flex {
+width: 100%;
+display: flex;
+border-radius: 15px;
+
+}
+
+.images--flex > * {
+flex: 1;
+}
+
+.images--flex__inner {
+display: flex;
+flex-wrap: wrap;
+align-items: stretch;
+}
+
+.images--flex__inner > * {
+width: 50%;
+height: 50%;
 }
