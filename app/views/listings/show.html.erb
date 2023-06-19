@@ -1,61 +1,128 @@
 <div class="container">
-<%# Header component here %>
-    <div class = "header-container">
-      <h1><%= @listing.name %></h1>
-         <div class="header-row">
-            <div class="header-column flex-grow-1">
-              <p><%="★ 4.92 · Superhost · " %> <%= @listing.location %></p>
-            </div>
-           <div class="header-column">
-              <p><%="something here" %></p>
-            </div>
-          </div>
-        </div>
-    </div>
+  <%# Header component here %>
+  <h1><%= @listing.name %></h1>
 
-
-<%# Listing Images here %>
-<div id="listings">
-  <div class="col">
+  <div class="header-row">
+    <p> <i class="fa-solid fa-star"></i> <%= "4.92 · Superhost · " + @listing.location %></p>
+    <p><button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-share"></i> Share </button> <button type="button" class="btn btn-outline-dark"> <i class="fa-regular fa-heart"></i> Save</button></p>
   </div>
-  <div class="col" id="listingsImg">
-    <div class="row">
-    <%# #IMAGES NEED TO BE PULLED FROM LISTING IMAGE %>
-      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-20605023/original/54a54b14-9c99-4b06-a89b-a825c73879d7.jpeg?im_w=720" />
-      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-20605023/original/54a54b14-9c99-4b06-a89b-a825c73879d7.jpeg?im_w=720" />
-    </div>
-    <div class="row">
-      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-20605023/original/54a54b14-9c99-4b06-a89b-a825c73879d7.jpeg?im_w=720" />
-      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-20605023/original/54a54b14-9c99-4b06-a89b-a825c73879d7.jpeg?im_w=720" />
+
+  <%# Listing Images here %>
+  <div class="images--flex">
+    <img src="https://placekitten.com/400/400" alt="">
+    <div class="images--flex__inner">
+      <img src="https://placekitten.com/600/300" alt="">
+      <img src="https://placekitten.com/900/800" alt="">
+      <img src="https://placekitten.com/1200/400" alt="">
+      <img src="https://placekitten.com/1200/400" alt="">
     </div>
   </div>
-</div>
 
+  <%# Listing Information here %>
+  <div class="row">
+    <div class="col-md-7">
 
-
-    <div class="listing-gallery">
-
-      <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div> %>
-          <h2>Dying</h2>
-          <p></p>
-        </div>
-        <h2 class="card-trip-pricing">£99.99</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-                  <!-- Add more images here if available -->
-        </div>
-        <div class="details">
-          <p><%= @listing.location %></p>
-          <p><%= @listing.details %></p>
-          <p>Price: <%= @listing.price %></p>
-          <p>Check-in: <%= "Whatever"%></p>
-          <p>Check-out: <%= "wahtever" %></p>
+      <%# header %>
+      <div class="d-flex align-items-center justify-content-between w-100 border-bottom my-3 pb-3">
+        <div>
+          <h2>Room in Paris hosted by Moinho</h2>
+          <p> · 2 guests · 1 bedroom · 1 bed · 1 bathroom</p>
         </div>
 
+        <%= image_tag 'logo.png', class: 'avatar' %>
+      </div>
+
+      <%# room details %>
+      <div class="d-flex align-items-center justify-content-start pb-3">
+
+        <i class="fa-solid fa-envelope fa-2x"></i>
+
+        <div class="ms-3">
+          <strong>Room in a home</strong>
+          <p class="mb-0">Your own room in a home, plus access to shared spaces.</p>
+        </div>
 
       </div>
+
+      <div class="d-flex align-items-center justify-content-start pb-3">
+
+        <i class="fa-solid fa-envelope fa-2x"></i>
+
+        <div class="ms-3">
+          <strong>Dedicated workspace</strong>
+          <p class="mb-0">A room with wifi that’s well suited for working.</p>
+        </div>
+
+      </div>
+
+      <div class="d-flex align-items-center justify-content-start pb-3 border-bottom my-3 ">
+
+        <i class="fa-solid fa-envelope fa-2x"></i>
+
+        <div class="ms-3">
+          <strong>Free cancellation before 27 Oct.</strong>
+          <%# <p class="mb-0">Superhosts are experienced, highly rated hosts who are committed to providing great stays for their guests.</p> %>
+        </div>
+
+      </div>
+
+
+       <%# Meet your Host %>
+      <div class="align-items-center justify-content-start pb-3 border-bottom my-3 ">
+          <div class="ms-3">
+            <h4> Meet your Host</h4>
+            <strong>Eduoard</strong>
+            <p class="mb-0">I love music (from early to electronic), I love theatre, film, dance, literature. I like to go mountain biking, hiking, and horseback riding when I can. I love animals, but I prefer that they live in the wild. I'm a visual artist, working mostly on participatory projects. I enjoy meeting new people and sharing some moments of my day with guests.</p>
+          </div>
+
+      </div>
+
+
+      <%# About this place %>
+      <div class="align-items-center justify-content-start pb-3 border-bottom my-3 ">
+          <div class="ms-3">
+            <h4>About this place</h4>
+            <p>Grade II listed barn conversion with charming spacious double bedroom and ensuite shower room. Located in historic village of Lindfield.</p>
+            <p class="mb-0">The house is Grade II listed building, dated around 1600. It has full of character, with beautiful garden. Recently refurbished space, with charming decor, the room is a perfec...</p>
+            <p><a href="#" class="link-dark">Show more <i class="fa-solid fa-chevron-right"></i></a></p>
+          </div>
+
+      </div>
+
     </div>
+
+
+    <%# Reservation Form here %>
+    <div class="col-md-4">
+
+    Create the form here!!
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
 
 
 </div>
