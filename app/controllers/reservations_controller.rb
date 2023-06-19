@@ -9,12 +9,12 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.new(reservation_parms)
     @reservation.user = current_user
     if @reservation.save
       redirect_to reservations_path
     else
-      render ‘listings/show’, status: :unprocessable_entity
+      render 'listings/show', status: :unprocessable_entity
     end
   end
 

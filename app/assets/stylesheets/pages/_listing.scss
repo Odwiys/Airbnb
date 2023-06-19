@@ -3,31 +3,39 @@
 
 .header-row {
   display: flex;
-  flex-wrap: wrap;
-
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-column {
-
+  flex-grow: 1;
 }
 
-
-#listings {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* General Image Styling */
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.col {
-  background: black;
-  margin: 1em;
+
+/* Flexbox-based solution: */
+.images--flex {
+  width: 100%;
+  display: flex;
+  border-radius: 15px;
+}
+
+.images--flex > * {
   flex: 1;
 }
-#listingsImg {
-  line-height: 0;
+
+.images--flex__inner {
   display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
-#listingsImg img {
-  background: blue;
-  width: 100%;
-  padding: 0.5em;
-  height: auto;
+
+.images--flex__inner > * {
+  width: 50%;
+  height: 50%;
 }
