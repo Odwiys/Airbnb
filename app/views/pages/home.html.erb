@@ -113,7 +113,7 @@
 <br>
 <br>
 
-<div class="container d-flex" style="justify-content: space-between;">
+<div class="container d-flex" style="justify-content: around;">
   <% @listings.each do |listing| %>
     <div class="listings flex-column mx-2">
       <div style="position: relative;">
@@ -123,16 +123,19 @@
        <div class="d-flex">
           <div class="flex-grow-1">
             <br>
-            <h4><b><%= listing.name %></b></h4>
-            <p>Rooms</p>
-            <p>9-12 July</p>
-            <p><b>$200/sgd</b> per night</p>
+            <h6><b><%= listing.name %></b></h6>
+            <p><%= listing.location %></p>
+            <p><%= listing.details %></p>
+            <p><b>$<%= listing.price %></b> per night</p>
           </div>
           <div>
             <br>
-            <i class="fa-solid fa-star"> 3.9</i>
+             <div class="fa-solid fa-star">3.9</div>
           </div>
         </div>
     </div>
   <% end %>
-</div>
+
+  <div class="button">
+    <button type="button">Show map</button>
+  </div>
