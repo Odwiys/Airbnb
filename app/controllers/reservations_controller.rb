@@ -1,11 +1,14 @@
 class ReservationsController < ApplicationController
+  def index
+    @reservations = Reservation.all
+  end
+
   def new
-    raise
     @listing = Listing.find(params[:listing_id])
-    @reservation = Reservation.new
   end
 
   def create
-
+    @reservation = Reservation.new
+    reservation.user = current_user
   end
 end
