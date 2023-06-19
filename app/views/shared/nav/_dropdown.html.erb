@@ -9,7 +9,8 @@
             <i class="fa-solid fa-globe mx-2 nav-link"></i>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle mx-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "pfp.png", class: "avatar dropdown-toggle mx-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%#= image_tag "pfp.png", alt="Description of the image", class: "avatar dropdown-toggle mx-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <div class="border-bottom">
               <%= link_to "Messages", "#", class: "dropdown-item" %>
@@ -36,8 +37,10 @@
             <%# <%= link_to "Messages", "#", class: "nav-link" %>
             <i class="fa-solid fa-globe mx-2 nav-link"></i>
           </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle mx-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <li class="nav-item dropdown d-flex align-items-center">
+            <a class="fa-solid fa-circle-user avatar mx-2 text-secondary" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class=" text-secondary"></i>
+            </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <div class="border-bottom">
               <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
