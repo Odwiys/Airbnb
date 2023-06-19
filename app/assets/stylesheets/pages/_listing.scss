@@ -4,15 +4,11 @@
 .header-row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header-column {
   flex-grow: 1;
-}
-
-.listings {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 /* General Image Styling */
@@ -24,23 +20,22 @@ img {
 
 /* Flexbox-based solution: */
 .images--flex {
-width: 100%;
-display: flex;
-border-radius: 15px;
-
+  width: 100%;
+  display: flex;
+  border-radius: 15px;
 }
 
 .images--flex > * {
-flex: 1;
+  flex: 1;
 }
 
 .images--flex__inner {
-display: flex;
-flex-wrap: wrap;
-align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .images--flex__inner > * {
-width: 50%;
-height: 50%;
+  width: 50%;
+  height: 50%;
 }
