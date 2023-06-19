@@ -8,12 +8,12 @@
     <div class="d-flex  justify-content-center">
       <div class="p-2"> Display all Listings</div>
             <div class="p-2"> | </div>
-      <div class="p-2 flex-grow-1"><%= link_to "Add New Lising", new_listing_path %></div>
+      <div class="p-2 flex-grow-1"><%= link_to "Add New Listing", new_listing_path %></div>
     </div>
 </div>
 
   <div class="container">
-    <% @listings.each do |listing| %>
+    <% current_user.listings.each do |listing| %>
       <div class="card">
       <% listing.images.each do |image| %>
         <div class="card-image"><%= cl_image_tag image.key, height: 100, width: 100, crop: :fill %></div>
