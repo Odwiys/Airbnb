@@ -42,6 +42,14 @@
                   <p>Until: <%= reservation.end_date %></p>
                 <%# Accept/ Decline buttons %>
                 <div class="d-flex justify-content-evenly me-1">
+
+                  <%# Test button %>
+                  <form action="<%= hosting_path(reservation) %>" method="post">
+                    <input type="hidden" name="_method" value="patch">
+                    <input type="submit" value="Change Status" class="btn btn-primary">
+                  </form>
+
+
                   <%= link_to "Accept", "#", class: "btn btn-gradient bg-success bg-gradient text-light" %>
                   <%= link_to "Decline", "#", class: "btn btn-gradient bg-danger bg-gradient text-light" %>
                 </div>

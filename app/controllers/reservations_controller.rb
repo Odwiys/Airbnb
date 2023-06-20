@@ -19,8 +19,11 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @listing = Listing.find(params[:listing_id])
     @reservations = listing.reservations
+  end
+
+  def hosting
+    @reservation = Reservation.find(params[:id])
   end
 
   private

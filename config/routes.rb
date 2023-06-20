@@ -10,6 +10,12 @@ Rails.application.routes.draw do
     resources :reservations, only: %i[index new create show]
   end
 
+  resources :reservations, only: [] do
+    member do
+      get :approve
+    end
+  end
+
   # resources :reservations, only: %i[index]
 
   resources :wishlists, only: %i[new create destroy] do
