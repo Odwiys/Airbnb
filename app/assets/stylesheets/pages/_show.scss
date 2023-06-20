@@ -1,9 +1,7 @@
 div.card#card1 {
-  position: sticky;
   top: 100px;
-  padding: 20px, 20px, 20px, 20px;
-  margin-left: 20px;
-  width: 110%;
+  margin-left: 45%;
+  width: 250%;
   height: 50%;
   box-shadow: 10px 5px 5px gray;
 }
@@ -20,8 +18,13 @@ div.card#card1 {
 }
 
 .btn-red {
-  background-color: rgb(254, 95, 95);
+  background-color: rgb(220, 105, 105);
   color: white;
   border-radius: 10px;
+  width: 100%;
+}
+
+.reservations-wrapper {
+  border-radius: 20px;
   width: 100%;
 }
