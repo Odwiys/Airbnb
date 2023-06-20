@@ -1,11 +1,12 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show new approve reject]
+  before_action :set_reservation, only: %i[show approve reject]
 
   def index
     @reservations = Reservation.all
   end
 
   def new
+    @reservation = Reservation.new
   end
 
   def create
