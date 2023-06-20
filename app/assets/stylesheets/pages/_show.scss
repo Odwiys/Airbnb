@@ -1,0 +1,27 @@
+.card {
+  position: sticky;
+  top: 100px;
+  padding: 20px, 20px, 20px, 20px;
+  margin-left: 20px;
+  width: 110%;
+  height: 50%;
+  box-shadow: 10px 5px 5px gray;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.reviews {
+  color: grey;
+}
+
+.btn-red {
+  background-color: rgb(254, 95, 95);
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+}

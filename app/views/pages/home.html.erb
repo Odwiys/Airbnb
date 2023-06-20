@@ -113,25 +113,27 @@
 <br>
 <br>
 
-<div class="container d-flex" style="justify-content: space-around;">
-  <% @listings.each do |listing| %>
-    <div class="listings flex-column mx-2">
-      <div style="position: relative;">
-        <i class="fa-regular fa-heart" style="color: #e53ece; position: absolute; right: 20px; top: 20px; font-size: 1.8rem;"></i>
-        <%= cl_image_tag(listing.images.attached? ? listing.images.first.key : "https://res.cloudinary.com/dulb8hprm/image/upload/r_50/v1687072605/h3lvkbuk8vb9wpwatjc3.jpg", style:'object-fit: cover; width: 18vw; height: 18vw; border-radius: 12px;')%>
+<div class="container justify-content-center">
+  <div class="display-grid">
+    <% @listings.each do |listing| %>
+      <div class="listings flex-column mx-2">
+        <div style="position: relative;">
+          <i class="fa-regular fa-heart" style="color: #e53ece; position: absolute; right: 20px; top: 20px; font-size: 1.8rem;"></i>
+          <%= cl_image_tag(listing.images.attached? ? listing.images.first.key : "https://res.cloudinary.com/dulb8hprm/image/upload/r_50/v1687072605/h3lvkbuk8vb9wpwatjc3.jpg", style:'object-fit: cover; width: 18vw; height: 18vw; border-radius: 12px;')%>
+        </div>
+            <div class="listing-header d-flex align-items-center" style="justify-content: space-between">
+              <h2><%= listing.name %></h2>
+                <div class="listing-rating">
+                  <i class="fa-solid fa-star"></i>
+                  <span>3.9</span>
+                </div>
+            </div>
+              <p><%= listing.location %></p>
+              <p><%= listing.details %></p>
+              <p><b>$<%= listing.price %></b> per night</p>
       </div>
-          <div class="listing-header d-flex align-items-center" style="justify-content: space-between">
-            <h2><%= listing.name %></h2>
-              <div class="listing-rating">
-                <i class="fa-solid fa-star"></i>
-                <span>3.9</span>
-              </div>
-          </div>
-            <p><%= listing.location %></p>
-            <p><%= listing.details %></p>
-            <p><b>$<%= listing.price %></b> per night</p>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <button type="button" class="map-btn d-flex align-items-center">Show map&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i></button>

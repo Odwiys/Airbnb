@@ -85,6 +85,9 @@
         </div>
       </div>
 
+    </div>
+
+
       <%# Where you'll sleep %>
       <div class="row border-bottom pb-3">
         <div class="col-sm-4">
@@ -96,6 +99,7 @@
             </div>
           </div>
         </div>
+
 
         <div class="col-sm-4">
           <div class="card" style="width: 100%;">
@@ -156,8 +160,32 @@
 
   <%# // RIGHT COLUMN // %>
     <div class="col-md-5">
-    Annabelle code goes here.
+    
+      <%# Reservation Form here %>
+      <div class="col-md-4">
+        <div class="card px-5 py-5" >
+          <form>
+            <div class="form-group">
+              <h5><b>$<%= @listing.price %></b>  night</h5>
+              <i class="fa-solid fa-star">4.5 . <span class="reviews">80 reviews</span></i>
+            </div>
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+
+             <%= link_to "Reserve", new_listing_reservation_path(@listing), class: "btn btn-flat btn-red" %>
+
+          </form>
+            <div class="text-center py-4">You won't be charged yet</div>
+        </div>
+      </div>
     </div>
+
 
   </div>
 </div>
