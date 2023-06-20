@@ -1,4 +1,4 @@
-<div class="container bg-light">
+<div class="container">
   <h1>Welcome, <%= @user.name %></h1>
 
   <br>
@@ -22,28 +22,35 @@
   <br>
 
   <div>
-  <% if @reservations.length === 0 %>
-    <p class="d-flex justify-content-center fw-medium m-5 border-bottom">You have no upcoming reservations.</p>
-    <%# <p class="d-flex justify-content-center"> See all reservations</p> %>
-  <% else %>
-    <div class="container listings flex-column mx-2 d-flex" style="justify-content: space-around;">
-      <div class="card">
-        <% @reservations.each do |reservation| %>
-          <%= cl_image_tag(reservation.listing.images.first.key, style:'object-fit: cover; width: 13vw; height: 13vw; border-radius: 12px;')%>
-          <h2><%= reservation.listing.name %></h2>
-          <h2>Booked by: <%= reservation.user.name %></h2>
-          <p>Booking from: <%= reservation.start_date %></p>
-          <p>Until: <%= reservation.end_date %></p>
-        <% end %>
-
-        <%# Accept/ Decline buttons %>
-        <div class="d-flex justify-content-between me-1">
-          <%= link_to "Accept", "#", class: "btn btn-gradient bg-success bg-gradient text-light" %>
-          <%= link_to "Decline", "#", class: "btn btn-gradient bg-danger bg-gradient text-light" %>
+    <% if @reservations.length === 0 %>
+      <p class="d-flex justify-content-center fw-medium m-5 border-bottom">You have no upcoming reservations.</p>
+      <%# <p class="d-flex justify-content-center"> See all reservations</p> %>
+    <% else %>
+      <%# New style %>
+      <div class="container d-flex justify-content-left">
+        <div class="d-flex display-grid">
+          <% @reservations.each do |reservation| %>
+            <div class="reservations flex-column mx-2">
+              <div style="position: relative;">
+                <div class="reservation-header d-flex align-items-center" style="justify-content: space-between">
+                  <h2 class="mb-3"><%= reservation.listing.name %></h2>
+                  </div>
+                <%= cl_image_tag(reservation.listing.images.first.key, style:'object-fit: cover; width: 18vw; height: 18vw; border-radius: 12px;')%>
+                <%#= cl_image_tag(reservation.images.attached? ? reservation.listing.images.first.key : "https://res.cloudinary.com/dulb8hprm/image/upload/r_50/v1687072605/h3lvkbuk8vb9wpwatjc3.jpg", style:'object-fit: cover; width: 18vw; height: 18vw; border-radius: 12px;')%>
+                  <p class="mt-3">Booked by: <%= reservation.user.name %></p>
+                  <p>Booking from: <%= reservation.start_date %></p>
+                  <p>Until: <%= reservation.end_date %></p>
+                <%# Accept/ Decline buttons %>
+                <div class="d-flex justify-content-evenly me-1">
+                  <%= link_to "Accept", "#", class: "btn btn-gradient bg-success bg-gradient text-light" %>
+                  <%= link_to "Decline", "#", class: "btn btn-gradient bg-danger bg-gradient text-light" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
   </div>
   <br>
   <div class="d-flex justify-content-center border-top">

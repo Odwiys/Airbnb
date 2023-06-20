@@ -17,14 +17,17 @@
 
   <%# Listing Images here %>
   <div class="images--flex p-1">
-    <img src="https://placekitten.com/400/400" alt="">
+      <%= cl_image_tag @listing.images[0].key, style:'object-fit: cover;'%>
     <div class="images--flex__inner">
-      <img src="https://placekitten.com/600/300" alt="">
-      <img src="https://placekitten.com/900/800" alt="">
-      <img src="https://placekitten.com/1200/400" alt="">
-      <img src="https://placekitten.com/1200/400" alt="">
+      <%= cl_image_tag @listing.images[0].key, style:'object-fit: cover;'%>
+      <%= cl_image_tag @listing.images[0].key, style:'object-fit: cover;'%>
+      <%= cl_image_tag @listing.images[0].key, style:'object-fit: cover;'%>
+      <%= cl_image_tag @listing.images[0].key, style:'obect-fit: cover;'%>
+
     </div>
   </div>
+
+
 
   <%# Listing information here %>
   <%# // LEFT COLUMN //  %>
@@ -57,7 +60,7 @@
         </div>
       </div>
 
-      <div class="d-flex align-items-center justify-content-start pb-3 border-bottom my-3">
+      <div class="d-flex align-items-center justify-content-start border-bottom my-3 pb-3">
         <i class="fa-solid fa-xmark"></i>
         <div class="ms-3">
           <strong>Free cancellation for 48 hours.</strong>
@@ -65,7 +68,7 @@
       </div>
 
       <%# Meet your Host %>
-      <div class="align-items-center justify-content-start pb-3 border-bottom my-3">
+      <div class="d-flex align-items-center justify-content-start border-bottom mb-3">
         <div class="mb-4">
           <h4>Meet your Host</h4>
           <strong>Eduoard</strong>
@@ -74,18 +77,19 @@
       </div>
 
       <%# About this place %>
-      <div class="align-items-center justify-content-start pb-3 border-bottom my-3">
+      <div class="d-flex align-items-center justify-content-start border-bottom mb-3">
         <div class="mb-4">
           <h4>About this place</h4>
           <p><%= @listing.name %> is a charming spacious double bedroom and ensuite shower room. Located in the <%= @listing.location %> </p>
           <p class="mb-0">The house is Grade II listed building, dated around 1600. It has full of character, with beautiful garden. Recently refurbished space, with charming decor, the room is a perfec...</p>
           <br>
-          <a href="#" class="link-dark">Show more<i class="fa-solid fa-chevron-right"></i></a>
+          <a href="#" class="link-dark">Show more</a> <i class="fa-solid fa-chevron-right"></i>
         </div>
       </div>
 
       <%# Where you'll sleep %>
-      <div class="row border-bottom pb-3">
+      <div class="row border-bottom pb-3 mb-3">
+        <h4>Where you'll sleep</h4>
         <div class="col-sm-4">
           <div class="card" style="width: 100%;">
             <div class="card-body text-center">
@@ -119,8 +123,8 @@
       </div>
 
       <%# List of amenities %>
-      <div class="container pt-4">
-        <h4 class="mb-4">What this place offers</h4>
+      <div class="">
+        <h4 class="pb-4">What this place offers</h4>
         <div class="row">
 
           <div class="col">
@@ -131,13 +135,10 @@
               <li class="list-group-item"><i class="fa-solid fa-person-dots-from-line"></i> Garden view</li>
               <li class="list-group-item"><i class="fa-solid fa-person-dots-from-line"></i> Kitchen</li>
             </ul>
-
-            <br><button type="button" class="btn btn-outline-dark btn-block">Show all 48 amenities</button></br>
-
           </div>
 
           <div class="col">
-            <ul class="list-group list-group-flush border-bottom">
+            <ul class="list-group list-group-flush">
               <li class="list-group-item"><i class="fa-solid fa-person-dots-from-line"></i> 22" TV with Chromecast</li>
               <li class="list-group-item"><i class="fa-solid fa-person-dots-from-line"></i> Washing machine</li>
               <li class="list-group-item"><i class="fa-solid fa-person-dots-from-line"></i> Dryer</li>
@@ -146,9 +147,24 @@
             </ul>
           </div>
         </div>
+        <br><button type="button" class="btn btn-outline-dark btn-block">Show all 48 amenities</button></br>
+        <br>
       </div>
 
+      <%# Where you'll be%>
+      <div class="d-flex align-items-center justify-content-start border-top mt-3">
+        <div class="mb-4 mt-4">
+          <h4>Where you'll be</h4>
+          <img src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-122.4515,37.7289,11.62,0/306x200?access_token=pk.eyJ1IjoiYW50bGVyc2FuZGxhZGRlciIsImEiOiJjbGozdWk3cnExbHMxM2t0OHlzbHIzanAzIn0.PgGIqib-qcb-ZHKUdFRBXw">
+          <p></p>
+          <p><strong><%= @listing.location %></strong></p>
+          <p>Beautiful village of <%= @listing.name %> is only 10 minutes walk. You can find a good selection of independent shops, coffee shop, tea rooms, pubs and restaurants or simply enjoying scenic walk at your doorstep.</p>
+          <p>...</p>
+          <a href="#" class="link-dark">Show more</a> <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
     </div>
+
 
   <%# // RIGHT COLUMN // %>
     <div class="col-md-5 position-sticky" style="top: 150px">
@@ -191,6 +207,34 @@
               <u><p>Report this listing</p></u>
           </div>
         </div>
+
+<%# Things to know %>
+<div class="container border-top border-bottom">
+  <h4 class="pt-2">Things to know</h4>
+    <div class="row">
+
+      <div class="col-sm">
+      <strong>House rules</strong>
+      <br>Check-in: 2:00 pm – 11:00 pm</br>
+      <br>Checkout before 10:00 am</br>
+      <br>4 guests maximum</br>
+      <br><a href="#" class="link-dark">Show more</a> <i class="fa-solid fa-chevron-right"></i></br>
+      </div>
+
+      <div class="col-sm">
+      <strong>Safety & property</strong>
+      <br>Carbon monoxide alarm</br>
+      <br>Smoke alarm</br>
+      <br>Not suitable for infants (under 2 years)</br>
+      <br><a href="#" class="link-dark">Show more</a> <i class="fa-solid fa-chevron-right"></i></br>
+
+      </div>
+
+      <div class="col-sm">
+      <strong>Cancellation policy</strong>
+      <br>Free cancellation before 10 Aug.</br>
+      <br>Review the Host’s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19.</br>
+      <br><a href="#" class="link-dark">Show more</a> <i class="fa-solid fa-chevron-right"></i></br>
       </div>
     </div>
 </div>
