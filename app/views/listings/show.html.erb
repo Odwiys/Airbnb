@@ -151,6 +151,19 @@
         <br>
       </div>
 
+       <%# Where you'll be%>
+      <div class="d-flex align-items-center justify-content-start border-top mt-3">
+        <div class="mb-4 mt-4">
+          <h4>Where you'll be</h4>
+          <img src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-122.4515,37.7289,11.62,0/306x200?access_token=pk.eyJ1IjoiYW50bGVyc2FuZGxhZGRlciIsImEiOiJjbGozdWk3cnExbHMxM2t0OHlzbHIzanAzIn0.PgGIqib-qcb-ZHKUdFRBXw">
+          <p></p>
+          <p><strong><%= @listing.location %></strong></p>
+          <p>Beautiful village of <%= @listing.name %> is only 10 minutes walk. You can find a good selection of independent shops, coffee shop, tea rooms, pubs and restaurants or simply enjoying scenic walk at your doorstep.</p>
+          <p>...</p>
+          <a href="#" class="link-dark">Show more</a> <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+
     </div>
 
 
@@ -197,5 +210,38 @@
         </div>
       </div>
     </div>
-<%#  I AM JUST PUTTING THIS LINE HERE TO SAY ITS THE LATEST %>
+
+    <%# Things to know %>
+
+  <%#  I AM JUST PUTTING THIS LINE HERE TO SAY ITS THE LATEST %>
+</div>
+
+<div class="container border-top border-bottom">
+  <h4 class="pt-2">Things to know</h4>
+  <div class="row">
+
+    <div class="col-sm">
+      <strong>House rules</strong>
+      <br>Check-in: 2:00 pm – 11:00 pm
+      <br>Checkout before 10:00 am
+      <br>4 guests maximum
+      <br><a href="#" class="link-dark">Show more</a> <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <div class="col-sm">
+      <strong>Safety & property</strong>
+      <br>Carbon monoxide alarm
+      <br>Smoke alarm
+      <br>Not suitable for infants (under 2 years)
+      <br><a href="#" class="link-dark">Show more</a> <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <div class="col-sm">
+      <strong>Cancellation policy</strong>
+      <br>Free cancellation before 10 Aug.
+      <br>Review the Host’s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19.
+      <br><a href="#" class="link-dark">Show more</a> <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+  </div>
 </div>
