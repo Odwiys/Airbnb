@@ -8,7 +8,9 @@
     <div class="d-flex  justify-content-center">
       <div class="p-2"> Display all Listings</div>
             <div class="p-2"> | </div>
-      <div class="p-2 flex-grow-1"><%= link_to "Add New Listing", new_listing_path %></div>
+      <div class="p-2 flex-grow-2"><%= link_to "Add New Listing", new_listing_path %></div>
+            <div class="p-2"> | </div>
+      <div class="p-2 flex-grow-2"><%= link_to "View Reservations", hosting_path %></div>
     </div>
 </div>
 
@@ -25,7 +27,7 @@
         <p><%= listing.location %></p>
         <p><%= listing.details %></p>
         <p><strong>$<%= listing.price %>SGD</strong> night</p>
-        <%= link_to "View Reservations", '#', class: "btn btn-gradient bg-danger bg-gradient text-light" %>
+        <%#= link_to "View Reservations", hosting_path, class: "btn btn-gradient bg-danger bg-gradient text-light" %>
   </div>
     <% end %>
 </div>
