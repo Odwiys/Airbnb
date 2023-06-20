@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show new]
+  before_action :set_reservation, only: %i[show new approve]
 
   def index
     @reservations = Reservation.all
@@ -22,8 +22,9 @@ class ReservationsController < ApplicationController
     @reservations = listing.reservations
   end
 
-  def hosting
+  def approve
     @reservation = Reservation.find(params[:id])
+    @reservation.status = true
   end
 
   private
