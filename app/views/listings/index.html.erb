@@ -14,13 +14,13 @@
     </div>
 </div>
 
-<div class="container justify-content-center d-flex p-8">
+<div class="container justify-content-center d-flex p-4">
   <div class="display-grid">
     <% @listings.each do |listing| %>
-      <div class="listings flex-column mx-2">
+      <div class="listings flex-column mx-4 px-2">
         <div style="position: relative">
           <% listing.images.each do |image| %>
-            <%= cl_image_tag image.key, style:'object-fit: cover; width: 18vw; height: 18vw; border-radius: 12px;'%>
+            <%= cl_image_tag image.key, style:'object-fit: cover; width: 110%; height: 16vw; border-radius: 12px;'%>
           <% end %>        
         </div>
             <div class="listing-header d-flex align-items-center" style="justify-content: space-between">

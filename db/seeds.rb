@@ -110,6 +110,22 @@ reservation = Reservation.new(
   user: user_guest,
   listing: Listing.first
 )
-
 reservation.save!
+
+reservation_two = Reservation.new(
+  start_date: Faker::Date.between(from: 1.day.from_now, to: 6.months.from_now),
+  end_date: Faker::Date.between(from: Date.current, to: 12.months.from_now),
+  user: user_guest,
+  listing: Listing.all[1]
+)
+reservation_two.save!
+
+reservation_three = Reservation.new(
+  start_date: Faker::Date.between(from: 1.day.from_now, to: 6.months.from_now),
+  end_date: Faker::Date.between(from: Date.current, to: 12.months.from_now),
+  user: user_guest,
+  listing: Listing.all[2]
+)
+reservation_three.save!
+
 puts "Created reservation"
