@@ -82,8 +82,8 @@ input:checked + .slider:before {
   background: rgb(31, 31, 31);
   bottom: 0.5rem;
   margin-bottom: 40px;
-  left: 44.5%;
-  right: 44.5%;
+  left: 44%;
+  right: 44%;
 }
 
 .listing-header {
@@ -99,5 +99,5 @@ h2 {
 .display-grid {
   justify-content: center;
   display: grid;
-  grid-template-columns: 29% 29% 29% 29%;
+  grid-template-columns: 24% 24% 24% 24%;
 }
