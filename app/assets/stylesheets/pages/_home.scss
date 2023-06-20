@@ -95,3 +95,8 @@ h2 {
   font-weight: bold;
   margin-top: 10px;
 }
+
+.display-grid {
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+}
