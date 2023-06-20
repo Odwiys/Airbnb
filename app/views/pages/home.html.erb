@@ -120,8 +120,7 @@
         </div>
         <%= cl_image_tag(listing.images.attached? ? listing.images.first.key : "https://res.cloudinary.com/dulb8hprm/image/upload/r_50/v1687072605/h3lvkbuk8vb9wpwatjc3.jpg", style:'object-fit: cover; width: 100%; height: 18vw; border-radius: 12px;')%>
         <div class="listing-header d-flex align-items-center" style="justify-content: space-between">
-          <h2><%= listing.name %></h2>
-            <div class="listing-rating">
+            <h2><%= link_to listing.name, listing_path(listing), class: "text-dark text-decoration-none" %></h2>            <div class="listing-rating">
               <i class="fa-solid fa-star"></i>
               <span>3.9</span>
             </div>
