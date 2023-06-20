@@ -77,7 +77,7 @@ input:checked + .slider:before {
 .map-btn {
   position: fixed;
   color: white;
-  padding: 15px 24px;
+  padding: 18px 26px;
   border-radius: 50px;
   background: rgb(31, 31, 31);
   bottom: 0.5rem;
@@ -97,6 +97,7 @@ h2 {
 }
 
 .display-grid {
+  justify-content: center;
   display: grid;
-  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-columns: 29% 29% 29% 29%;
 }
