@@ -28,9 +28,8 @@
 
   <%# Listing information here %>
   <%# // LEFT COLUMN //  %>
-  <div class="row">
+  <div class="row d-flex flex-start">
     <div class="col-md-7">
-
       <%# Listing Title %>
       <div class="d-flex align-items-center justify-content-between w-100 border-bottom my-3 pb-3">
         <div>
@@ -152,8 +151,7 @@
     </div>
 
   <%# // RIGHT COLUMN // %>
-    <div class="col-md-5">
-
+    <div class="col-md-5 position-sticky" style="top: 150px">
       <%# Reservation Form here %>
       <div class="col-md-4">
         <div class="card px-5 py-5" id="card1">
@@ -162,21 +160,37 @@
               <h5><b>$<%= @listing.price %></b>  night</h5>
               <i class="fa-solid fa-star">4.5 . <span class="reviews">80 reviews</span></i>
             </div>
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <div class="reservations-wrapper">
+              <div class="pb-4">
+                <div class="border rounded-4 border-secondary">
+                  <div class="d-flex rounded border-dark border-bottom">
+                    <div class="w-50 text-left ps-3 py-3">
+                      <div>CHECK-IN</div>
+                      <div class="text-secondary">Add date</div>
+                    </div>
+                    <div class="w-50 text-left ps-3 py-3 border-start border-dark">
+                      <div>CHECKOUT</div>
+                      <div class="text-secondary">Add date</div>
+                    </div>
+                  </div>
+                  <div class="w-100 text-left ps-3 py-3">
+                    <div class="d-flex justify-content-between pe-4">
+                      <div>GUESTS</div>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="text-secondary">1 guest</div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-             <%= link_to "Reserve", new_listing_reservation_path(@listing), class: "btn btn-flat btn-red" %>
-
+             <%= link_to "Check availability", new_listing_reservation_path(@listing), class: "btn btn-flat btn-red" %>
           </form>
-            <div class="text-center py-4">You won't be charged yet</div>
+            <div class="justify-content-center d-flex pt-4">
+              <i class="fa-solid fa-flag pe-4 pt-1"></i>
+              <u><p>Report this listing</p></u>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </div>
