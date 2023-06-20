@@ -10,10 +10,10 @@
     <h3><%#= link_to "All reservations", "#", class: "d-flex btn btn-ghost text-dark" %></h3>
   </div>
   <div class="border-bottom">
-    <%= link_to "Checking out (0)", "#", class: "btn btn-ghost text-dark" %>
-    <%= link_to "Currently hosting (0)", "#", class: "btn btn-ghost text-dark" %>
-    <%= link_to "Arriving soon (0)", "#", class: "btn btn-ghost text-dark" %>
-    <%= link_to "Upcoming (0)", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to "Checking out", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to "Currently hosting", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to "Arriving soon", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to "Upcoming", hosting_upcoming_path, class: "btn btn-ghost text-dark" %>
     <%= link_to "#", class: "btn btn-ghost text-dark" do %>
       Pending (<%= @reservations.length %>)
     <% end %>
@@ -43,7 +43,8 @@
                 <%# Accept/ Decline buttons %>
                 <div class="d-flex justify-content-evenly me-1">
                   <%= link_to "Accept", approve_reservation_path(reservation), class: "btn btn-gradient bg-success bg-gradient text-light" %>
-                  <%= link_to "Decline", "#", class: "btn btn-gradient bg-danger bg-gradient text-light" %>
+                  <%#= link_to "Decline", "#", class: "btn btn-gradient bg-danger bg-gradient text-light" %>
+                  <%= link_to "Decline", reject_reservation_path(reservation), class: "btn btn-danger bg-gradient text-light" %>
                 </div>
               </div>
             </div>

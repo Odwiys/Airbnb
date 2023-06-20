@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>Welcome, <%= @user.name %></h1>
+
+  <br>
+
+  <div>
+    <h2 class="fs-4 text">Your Upcoming Reservations </h2>
+    <br>
+    <br>
+    <h3><%#= link_to "All reservations", "#", class: "d-flex btn btn-ghost text-dark" %></h3>
+  </div>
+  <div class="border-bottom">
+    <%= link_to "Checking out", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to "Currently hosting", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to "Arriving soon", "#", class: "btn btn-ghost text-dark" %>
+    <%= link_to hosting_upcoming_path, class: "btn btn-ghost text-dark" do %>
+      Upcoming
+    <% end %>
+    <%= link_to hosting_path, class: "btn btn-ghost text-dark" do %>
+      Pending
+    <% end %>
+  </div>
+
+  <div>
+    <% if @reservations.length === 0 %>
+      <p class="d-flex justify-content-center fw-medium m-5 border-bottom">You have no upcoming reservations.</p>
+      <%# <p class="d-flex justify-content-center"> See all reservations</p> %>
+    <% else %>
+      <%# New style %>
+      <div class="container d-flex justify-content-left">
+        <div class="d-flex display-grid">
+            <div class="reservations flex-column mx-2">
+              <div style="position: relative;">
+                <div class="reservation-header d-flex align-items-center" style="justify-content: space-between">
+                  <h2 class="mb-3"><%= @reservations.first.listing.name %></h2>
+                  </div>
+                  <%= cl_image_tag(@reservations.first.listing.images.first.key, style:'object-fit: cover; width: 18vw; height: 18vw; border-radius: 12px;')%>
+                  <%#= cl_image_tag(reservation.images.attached? ? reservation.listing.images.first.key : "https://res.cloudinary.com/dulb8hprm/image/upload/r_50/v1687072605/h3lvkbuk8vb9wpwatjc3.jpg", style:'object-fit: cover; width: 18vw; height: 18vw; border-radius: 12px;')%>
+                  <p class="mt-3">Booked by: <%= @reservations.first.user.name %></p>
+                  <p>Booking from: <%= @reservations.first.start_date %></p>
+                  <p>Until: <%= @reservations.first.end_date %></p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

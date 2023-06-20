@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show new approve]
+  before_action :set_reservation, only: %i[show new approve reject]
 
   def index
     @reservations = Reservation.all
@@ -25,12 +25,35 @@ class ReservationsController < ApplicationController
   def approve
     @reservation = Reservation.find(params[:id])
     @reservation.status = true
+    if @reservation.save
+      redirect_to hosting_upcoming_path
+    else
+      render 'hosting', status: :unprocessable_entity
+    end
   end
+
+  def upcoming
+    @reservations = Reservation.all.where('reservations.status.where = ?', true)
+  end
+
+  def reject
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = false
+    @reservation.save
+    redirect_to hosting_path
+  end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to hosting_path, notice: "Reservation deleted successfully."
+  end
+
 
   private
 
   def set_reservation
-    @listing = Listing.find(params[:listing_id])
+    @reservation = Reservation.find(params[:id])
   end
 
   def reservation_params

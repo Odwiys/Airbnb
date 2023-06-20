@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :reservations, only: [] do
     member do
-      get :approve
+      get :approve, :reject
     end
   end
 
@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   end
 
   get "hosting", to: "pages#hosting"
+  get "hosting/upcoming", to: "pages#upcoming"
 end
